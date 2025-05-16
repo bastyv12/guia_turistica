@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+  <link rel="stylesheet" href="estilo.css" />
+  <title>Menú</title>
+  <style>
+    section {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+    }
+
+    #about { background-color: rgba(0, 0, 0, 0.7); }
+    #services { background-color: rgba(20, 20, 20, 0.7); }
+    #contact { background-color: rgba(40, 40, 40, 0.7); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">Web Dev Creative</a>
+      </div>
+      <ul class="links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#contact">Contactos</a></li>
+      </ul>
+      <a href="#" class="action_btn">Get Started</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <ul class="dropdown_menu">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#contact">Contactos</a></li>
+      <li><a href="#" class="action_btn">Get Started</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Bienvenido</h1>
+      <p>Esta es la sección principal de nuestra página. Aquí puedes dar una bienvenida o explicar brevemente de qué se trata tu sitio.</p>
+    </section>
+
+    <section id="about">
+      <h1>Sobre Nosotros</h1>
+      <p>Somos una empresa creativa dedicada al desarrollo web y soluciones digitales. Nos enfocamos en crear experiencias modernas, funcionales y atractivas.</p>
+    </section>
+
+    <section id="services">
+      <h1>Servicios</h1>
+      <p>Ofrecemos diseño de páginas web, desarrollo de aplicaciones, consultoría tecnológica, posicionamiento SEO y más.</p>
+    </section>
+
+    <section id="contact">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes un proyecto en mente? ¡Hablemos! Puedes escribirnos a contacto@webdevcreative.com o usar el formulario de contacto en nuestra página.</p>
+    </section>
+  </main>
+
+  <script>
+    const toggleBtn = document.querySelector(".toggle_btn");
+    const toggleBtnIcon = document.querySelector(".toggle_btn i");
+    const dropdownMenu = document.querySelector(".dropdown_menu");
+
+    toggleBtn.onclick = function () {
+      dropdownMenu.classList.toggle("open");
+      const isOpen = dropdownMenu.classList.contains("open");
+
+      toggleBtnIcon.className = isOpen
+        ? "fa-solid fa-xmark"
+        : "fa-solid fa-bars";
+    };
+  </script>
+</body>
+</html>
